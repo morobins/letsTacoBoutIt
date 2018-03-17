@@ -5,17 +5,10 @@ $(document).ready(function () {
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
     spaceBetween: 30,
-    // autoplay: 5000,
     autoplayDisableOnInteraction: false,
     loop: true,
     autoHeight: true
   });
-
-
-
-
-
-
 
   function printCards(searchTerm, destination) {
     var queryURL = "https://api.edamam.com/search?q=" + searchTerm + "&app_id=e4a1878b&app_key=0e63bfc5291dfe20fad787020026c8ad&from=0&to=3";
@@ -28,7 +21,7 @@ $(document).ready(function () {
       console.log(response);
 
       for (var i = 0; i < response.hits.length; i++) {
-        console.log('hi');
+        
         var cardHolder = $(destination)
         //create a div with a col class
         var cardCol = $('<div>');
@@ -55,39 +48,25 @@ $(document).ready(function () {
         var recipeLink = $('<div>');
         recipeLink.addClass("card-action center-align");
 
-      var a = $("<a>");
-      a.attr("href", response.hits[i].recipe.shareAs);
-      a.html("Get Recipe");
+        var a = $("<a>");
+        a.attr("href", response.hits[i].recipe.shareAs);
+        a.html("Get Recipe");
 
-      recipeLink.append(a);
-      cardContent.append(recipeLink);
-
+        recipeLink.append(a);
+        cardContent.append(recipeLink);
         card.append(cardContent);
-
         cardCol.append(card);
-
         cardHolder.append(cardCol);
 
       }
     });
-
-
   }
 
   printCards("margarita", "#margarita-card-holder");
-
-
-  //append card content to card
-  //create a button and append to card
-  //append card to col div
-  //append col div to margarita row
-
-
-
-
-
-
-
+  printCards("mexican rice", "#rice-card-holder");
+  printCards("taco filling", "#filling-card-holder");
+  printCards("salsa", "#salsa-card-holder");
+  printCards("guacamole", "#guac-card-holder");
 
   // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
 

@@ -48,10 +48,19 @@ $(document).ready(function () {
 
         cardContent.prepend(cardTitle);
 
-
         var recipeSource = $('<p>');
         recipeSource.html(response.hits[i].recipe.source);
         cardContent.append(recipeSource);
+
+        var recipeLink = $('<div>');
+        recipeLink.addClass("card-action center-align");
+
+      var a = $("<a>");
+      a.attr("href", response.hits[i].recipe.shareAs);
+      a.html("Get Recipe");
+
+      recipeLink.append(a);
+      cardContent.append(recipeLink);
 
         card.append(cardContent);
 

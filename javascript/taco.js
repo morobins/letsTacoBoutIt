@@ -83,11 +83,23 @@ $(document).ready(function () {
   //append col div to margarita row
 
 
+  var queryURL2 = "https://api.napster.com/v2.2/genres/latin?apikey=NmI2MWUyNTctNWY1MC00MmQ4LTg1ODEtODZhMTQwMzNiYWY5
+  ";
+
+
+  $.ajax({
+    url: queryURL2,
+    method: "GET"
+  }).then(function (napster) {
+
+    console.log(napster);
+
+  });
 
 
 
 
-
+ 
 
   // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
 

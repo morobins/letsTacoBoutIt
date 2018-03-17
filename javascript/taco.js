@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
   var swiper = new Swiper('.swiper-container', {
     pagination: '.swiper-pagination',
     paginationClickable: true,
@@ -11,49 +11,85 @@ $(document).ready(function(){
     autoHeight: true
   });
 
-var queryURL = "https://api.edamam.com/search?q=margarita&app_id=e4a1878b&app_key=0e63bfc5291dfe20fad787020026c8ad&from=0&to=2";
 
 
-		$.ajax({
-			url: queryURL,
-			method: "GET"
-		}).then(function(response) {
+
+
+
+
+  function printCards(searchTerm, destination) {
+    var queryURL = "https://api.edamam.com/search?q=" + searchTerm + "&app_id=e4a1878b&app_key=0e63bfc5291dfe20fad787020026c8ad&from=0&to=3";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
 
       console.log(response);
-      
-      $.each(response.hits, function (key, data) {
-        //Loop to write all card element with json. (i is index for card in json.)
-        console.log(data);
-        $('#margarita-card-holder').append('<div class="col s4" >');
-        $('#margarita-card-holder').append('<div class="card blue-grey darken-1">');
-        //Card Content
-        $('#margarita-card-holder').append('<div class="card-content white-text">');
-        //Card Title
-        $('#margarita-card-holder').append('<span class="card-title">' + response.hits[i].recipe.label + '</span>');
-        //Card Subtitle
-        $('#margarita-card-holder').append('<p>' + response.hits[i].recipe.source + '</p>');
-    
+
+      for (var i = 0; i < response.hits.length; i++) {
+        console.log('hi');
+        var cardHolder = $(destination)
+        //create a div with a col class
+        var cardCol = $('<div>');
+        cardCol.addClass("col s4");
+
+        //create the card
+        var card = $('<div>');
+        card.addClass("card blue-grey darken-1");
+
+        //create card content
+        var cardContent = $('<div>');
+        cardContent.addClass('card-content white-text');
+
+        var cardTitle = $('<span>');
+        cardTitle.addClass('card-title');
+        cardTitle.html(response.hits[i].recipe.label)
+
+        cardContent.prepend(cardTitle);
+
+
+        var recipeSource = $('<p>');
+        recipeSource.html(response.hits[i].recipe.source);
+        cardContent.append(recipeSource);
+
+        card.append(cardContent);
+
+        cardCol.append(card);
+
+        cardHolder.append(cardCol);
+
+      }
     });
-      // $("#margarita-card-title").html(response.hits[i].recipe.label);
-      
-      // = $("<div>");
-      // margaritaCards.addClass("col s4");
-
-      
-			// $("#margarita-source").text("This recipe is from " + response.hits[0].recipe.source);
-
-		});
-
-		var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
 
 
-		$.ajax({
-			url: queryURL2,
-			method: "GET"
-		}).then(function(youTube) {
+  }
 
-			console.log(youTube);
+  printCards("margarita", "#margarita-card-holder");
 
-    });
-    
-  });
+
+  //append card content to card
+  //create a button and append to card
+  //append card to col div
+  //append col div to margarita row
+
+
+
+
+
+
+
+
+  // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
+
+
+  // $.ajax({
+  //   url: queryURL2,
+  //   method: "GET"
+  // }).then(function (youTube) {
+
+  //   console.log(youTube);
+
+  // });
+
+});

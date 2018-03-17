@@ -6,9 +6,34 @@ $(document).ready(function () {
     prevButton: '.swiper-button-prev',
     spaceBetween: 30,
     autoplayDisableOnInteraction: false,
-    loop: true,
+    // loop: true,
     autoHeight: true
   });
+
+  var apiInfo = [{
+      name: "guacamole",
+      placement: "#guac-card-holder"
+    },
+    {
+      name: "margarita",
+      placement: "#margarita-card-holder"
+    },
+    {
+      name: "mexican rice",
+      placement: "#rice-card-holder"
+    },
+    {
+      name: "taco filling",
+      placement: "#filling-card-holder"
+    },
+    {
+      name: "salsa",
+      placement: "#salsa-card-holder"
+    }
+  ];
+
+  var apiCounter = 0;
+
 
   function printCards(searchTerm, destination) {
     var queryURL = "https://api.edamam.com/search?q=" + searchTerm + "&app_id=e4a1878b&app_key=0e63bfc5291dfe20fad787020026c8ad&from=0&to=3";
@@ -21,7 +46,7 @@ $(document).ready(function () {
       console.log(response);
 
       for (var i = 0; i < response.hits.length; i++) {
-        
+        console.log(response.hits[i])
         var cardHolder = $(destination)
         //create a div with a col class
         var cardCol = $('<div>');
@@ -57,16 +82,23 @@ $(document).ready(function () {
         card.append(cardContent);
         cardCol.append(card);
         cardHolder.append(cardCol);
+      }
 
+      apiCounter++;
+
+      if (apiCounter < apiInfo.length) {
+        printCards(apiInfo[apiCounter].name, apiInfo[apiCounter].placement);
       }
     });
   }
 
-  printCards("margarita", "#margarita-card-holder");
-  printCards("mexican rice", "#rice-card-holder");
-  printCards("taco filling", "#filling-card-holder");
-  printCards("salsa", "#salsa-card-holder");
-  printCards("guacamole", "#guac-card-holder");
+
+
+  printCards(apiInfo[apiCounter].name, apiInfo[apiCounter].placement);
+  // printCards("margarita", "#margarita-card-holder");
+  // printCards("mexican rice", "#rice-card-holder");
+  // printCards("taco filling", "#filling-card-holder");
+  // printCards("salsa", "#salsa-card-holder");
 
   // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
 

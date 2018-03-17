@@ -5,16 +5,34 @@ $(document).ready(function () {
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
     spaceBetween: 30,
-    // autoplay: 5000,
     autoplayDisableOnInteraction: false,
-    loop: true,
+    // loop: true,
     autoHeight: true
   });
 
+  var apiInfo = [{
+      name: "guacamole",
+      placement: "#guac-card-holder"
+    },
+    {
+      name: "margarita",
+      placement: "#margarita-card-holder"
+    },
+    {
+      name: "mexican rice",
+      placement: "#rice-card-holder"
+    },
+    {
+      name: "taco filling",
+      placement: "#filling-card-holder"
+    },
+    {
+      name: "salsa",
+      placement: "#salsa-card-holder"
+    }
+  ];
 
-
-
-
+  var apiCounter = 0;
 
 
   function printCards(searchTerm, destination) {
@@ -28,7 +46,7 @@ $(document).ready(function () {
       console.log(response);
 
       for (var i = 0; i < response.hits.length; i++) {
-        console.log('hi');
+        console.log(response.hits[i])
         var cardHolder = $(destination)
         //create a div with a col class
         var cardCol = $('<div>');
@@ -55,23 +73,23 @@ $(document).ready(function () {
         var recipeLink = $('<div>');
         recipeLink.addClass("card-action center-align");
 
-      var a = $("<a>");
-      a.attr("href", response.hits[i].recipe.shareAs);
-      a.html("Get Recipe");
+        var a = $("<a>");
+        a.attr("href", response.hits[i].recipe.shareAs);
+        a.html("Get Recipe");
 
-      recipeLink.append(a);
-      cardContent.append(recipeLink);
-
+        recipeLink.append(a);
+        cardContent.append(recipeLink);
         card.append(cardContent);
-
         cardCol.append(card);
-
         cardHolder.append(cardCol);
+      }
 
+      apiCounter++;
+
+      if (apiCounter < apiInfo.length) {
+        printCards(apiInfo[apiCounter].name, apiInfo[apiCounter].placement);
       }
     });
-
-
   }
 
   printCards("margarita", "#margarita-card-holder");
@@ -83,18 +101,18 @@ $(document).ready(function () {
   //append col div to margarita row
 
 
-  var queryURL2 = "https://api.napster.com/v2.2/genres/latin?apikey=NmI2MWUyNTctNWY1MC00MmQ4LTg1ODEtODZhMTQwMzNiYWY5
-  ";
+  // var queryURL2 = "https://api.napster.com/v2.2/genres/latin?apikey=NmI2MWUyNTctNWY1MC00MmQ4LTg1ODEtODZhMTQwMzNiYWY5
+  // ";
 
 
-  $.ajax({
-    url: queryURL2,
-    method: "GET"
-  }).then(function (napster) {
+  // $.ajax({
+  //   url: queryURL2,
+  //   method: "GET"
+  // }).then(function (napster) {
 
-    console.log(napster);
+  //   console.log(napster);
 
-  });
+  // });
 
 
 

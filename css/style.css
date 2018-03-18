@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -6,36 +7,16 @@ body {
   /* background: #eee; */
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
-  color:#000;
+  color: #000;
   margin: 0;
   padding: 0;
 }
 
-/* .card {
-  z-index: 100;
-} */
-
-.lowerCase {
-text-transform: lowercase;
-text-align: center;
-}
-/* 
-.swiper-container {
-  min-height: 100vh;
+/* .swiper-container {
   width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-}
-.swiper-slide{
-  background-image: rgb(200,200,200);
-  min-height: 100vh;
-  text-align: center;
-  min-width: 100vw;
-  vertical-align: center;
-  line-height: 100vh;
-  color: white;
-  font-size: 3rem;
 } */
 
 .fullscreen {
@@ -43,20 +24,14 @@ text-align: center;
   margin: 0;
 }
 
-.change-color {
-  background-color: grey;
-}
-
 #card-holder {
   z-index: 99;
 }
 
-.swiper-slide {
+/* .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
-  /* Center slide text vertically */
-  
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -69,21 +44,23 @@ text-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-}
+} */
 
 /* Text Overlay */
+
 #lab_video_text_overlay h2 {
-  font-size:4em
+  font-size: 4em;
 }
 
-#lab_video_text_overlay .btn {
-  border-radius:0;
-  text-transform:uppercase;
-  font-weight:200;
+/* #lab_video_text_overlay .btn {
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: 200;
 }
+
 #lab_video_text_overlay .btn-warning {
-  background-color:#F5D328;
-}
+  background-color: #F5D328;
+} */
 
 #lab_video_text_overlay {
   position: absolute;
@@ -96,21 +73,28 @@ text-align: center;
 #lab_video_text_overlay .container {
   text-align: center;
   margin: 0px auto;
-background-color: #669900;
-opacity: 0.9;
+  background-color: #669900;
+  opacity: 0.9;
 }
 
 #card-holder {
   z-index: 100;
 }
 
-@media screen and (max-width:991px) {
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+/* @media screen and (max-width:991px) {
   #lab_video_text_wrap {
     height: 300px;
   }
-}
+} */
 
-@media screen and (max-width:650px) {
+/* @media screen and (max-width:650px) {
   #lab_video_text_wrap {
     height: 250px;
   }
@@ -120,4 +104,4 @@ opacity: 0.9;
   #lab_video_text_overlay p {
     font-size: .9em;
   }
-}
+} */

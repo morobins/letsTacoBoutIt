@@ -95,6 +95,67 @@ $(document).ready(function () {
 
 
   printCards(apiInfo[apiCounter].name, apiInfo[apiCounter].placement);
+
+  var config = {
+    apiKey: "AIzaSyDr6KgwjXN8Ly9mC-h6FwQ51rqPEKq5AeI",
+    authDomain: "monique-class-activities.firebaseapp.com",
+    databaseURL: "https://monique-class-activities.firebaseio.com",
+    projectId: "monique-class-activities",
+    storageBucket: "monique-class-activities.appspot.com",
+    messagingSenderId: "325232752750"
+  };
+
+  firebase.initializeApp(config);
+  
+  // Create a variable to reference the database.
+  var database = firebase.database();
+
+  $("#submit-form").on("click", function (event) {
+    event.preventDefault();
+  
+    // Grabbed values from text boxes
+    var name = $("#name-input").val().trim();
+    var comment = $("#comment-input").val().trim();
+  
+    console.log(name, comment);
+  
+    // Code for handling the push
+    database.ref().push({
+      name: name,
+      comment: comment,
+  //  firebase.database.ServerValue.TIMESTAMP
+    });
+  
+    $("#name-input").val('');
+    $("#comment-input").val('');
+   
+  
+  });
+
+  database.ref().on("child_added", function (childSnapshot) {
+
+    var name = childSnapshot.val().name;
+    var comment = childSnapshot.val().comment;
+    
+  
+    
+  
+  
+    var tbody = $('#comment-data')
+    var tr = $("<tr>");
+    var tdName = $("<td>").text(name);
+    var tdComment = $("<td>").text(comment);
+  
+    tr.append(tdName, tdComment);
+  
+    tbody.append(tr);
+  
+    // Handle the errors
+  }, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+  });
+
+  
   // printCards("margarita", "#margarita-card-holder");
   // printCards("mexican rice", "#rice-card-holder");
   // printCards("taco filling", "#filling-card-holder");

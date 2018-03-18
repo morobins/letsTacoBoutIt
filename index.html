@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
   <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.5/css/swiper.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Let's Taco 'Bout It!</title>
@@ -99,48 +100,52 @@
             </div>
 
             <div id="slide_seven" class="swiper-slide">
-              <div class="container card">
-                <div class="row">
-                  <form class="col s12">
-                    <input placeholder="Name" id="first_name" type="text" class="validate">
-
-                    <div class="row">
-                      <div class="input-field col s12">
-
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">Leave a Comment on a Recipe You Made!</label>
+              <div id="lab_video_text_overlay">
+                <div class="container">
+                  <h3>How did it go?</h3>
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <i class="material-icons prefix">account_circle</i>
+                          <input id="icon_prefix name-input" type="text" class="validate">
+                          <label for="icon_prefix">First Name</label>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s6">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="icon_prefix2 comment-input" class="materialize-textarea"></textarea>
+                            <label for="icon_prefix2">Let us know how your recipe came out!</label>
+                          </div>
+                        </div>
                       </div>
+                      <button type="submit" class="btn btn-info" id="submit-form">send</button>
+                      </button>
+                    </form>
+                    <div class="col s12">
+                      <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Comment</th>
+                              </tr>
+                            </thead>
+                            <tbody id="comment-data">
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                         <!-- end column for table -->
                     </div>
+                  </div>
                 </div>
               </div>
 
-              <table class="table card">
-                <thead>
-                  <tr>
-                      <th>Name</th>
-                      <th>Comment</th>
-                      <th>Item Price</th>
-                  </tr>
-                </thead>
-        
-                <tbody>
-                  <tr>
-                    <td>Alvin</td>
-                    <td>Eclair</td>
-                    <td>$0.87</td>
-                  </tr>
-                  <tr>
-                    <td>Alan</td>
-                    <td>Jellybean</td>
-                    <td>$3.76</td>
-                  </tr>
-                  <tr>
-                    <td>Jonathan</td>
-                    <td>Lollipop</td>
-                    <td>$7.00</td>
-                  </tr>
-                </tbody>
-              </table>
+              <video class="slider-video" width="100%" preload="auto" loop="" autoplay="" style="visibility: visible; width: 100%;" poster="./images/avocado.jpg">
+              </video>
+            </div>
             </div>
             <!-- end swiper wrapper -->
           </div>
@@ -161,6 +166,7 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.5/js/swiper.min.js"></script>
   <script type="text/javascript" src="./javascript/taco.js">
   </script>

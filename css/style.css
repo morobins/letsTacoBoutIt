@@ -11,21 +11,32 @@ body {
   padding: 0;
 }
 
-#slide_seven {
-  background-image: url("../images/salsa.jpg");
-}
+/* .card {
+  z-index: 100;
+} */
 
 .lowerCase {
 text-transform: lowercase;
 text-align: center;
 }
-
+/* 
 .swiper-container {
+  min-height: 100vh;
   width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
+.swiper-slide{
+  background-image: rgb(200,200,200);
+  min-height: 100vh;
+  text-align: center;
+  min-width: 100vw;
+  vertical-align: center;
+  line-height: 100vh;
+  color: white;
+  font-size: 3rem;
+} */
 
 .fullscreen {
   padding: 0;

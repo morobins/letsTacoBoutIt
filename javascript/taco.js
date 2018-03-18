@@ -95,40 +95,57 @@ $(document).ready(function () {
   printCards("margarita", "#margarita-card-holder");
 
 
-  //append card content to card
-  //create a button and append to card
-  //append card to col div
-  //append col div to margarita row
 
 
-  // var queryURL2 = "https://api.napster.com/v2.2/genres/latin?apikey=NmI2MWUyNTctNWY1MC00MmQ4LTg1ODEtODZhMTQwMzNiYWY5
-  // ";
+  console.clear();
+
+class musicPlayer {
+	constructor() {
+		this.play = this.play.bind(this);
+		this.playBtn = document.getElementById('play');
+		this.playBtn.addEventListener('click', this.play);
+		this.controlPanel = document.getElementById('control-panel');
+		this.infoBar = document.getElementById('info');
+	}
+
+	play() {
+		let controlPanelObj = this.controlPanel,
+		infoBarObj = this.infoBar
+		Array.from(controlPanelObj.classList).find(function(element){
+					return element !== "active" ? controlPanelObj.classList.add('active') : 		controlPanelObj.classList.remove('active');
+			});
+		
+		Array.from(infoBarObj.classList).find(function(element){
+					return element !== "active" ? infoBarObj.classList.add('active') : 		infoBarObj.classList.remove('active');
+			});
+	}
+}
+
+const newMusicplayer = new musicPlayer();
+
+  var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
 
 
-  // $.ajax({
-  //   url: queryURL2,
-  //   method: "GET"
-  // }).then(function (napster) {
+  $.ajax({
+    url: queryURL2,
+    method: "GET"
+  }).then(function (youTube) {
 
-  //   console.log(napster);
+    console.log(youTube);
 
-  // });
-
-
+  });
 
 
- 
-
-  // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
 
 
-  // $.ajax({
-  //   url: queryURL2,
-  //   method: "GET"
-  // }).then(function (youTube) {
 
-  //   console.log(youTube);
 
-  // });
+
 
 });
+
+
+
+
+
+

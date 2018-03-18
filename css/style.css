@@ -11,6 +11,10 @@ body {
   padding: 0;
 }
 
+#slide_seven {
+  background-image: url("../images/salsa.jpg");
+}
+
 .lowerCase {
 text-transform: lowercase;
 text-align: center;

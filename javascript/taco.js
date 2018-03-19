@@ -93,15 +93,54 @@ $(document).ready(function () {
   printCards(apiInfo[apiCounter].name, apiInfo[apiCounter].placement);
 
 
-  // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?id=PL-mzrQ96YAORBhi7iNU6Bu_Q5kbchMz0R&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
+  //Pinterest API call
+  var queryURL2 = "https://api.pinterest.com/v1/boards/eventprep/fiesta-themed-event/pins/?access_token=AVLO9DT26n5QIo51b82JWrmEjD1UFR1gVsDvElxEyV7qa4AvwAAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cboard%2Cimage";
 
-  // $.ajax({
-  //   url: queryURL2,
-  //   method: "GET"
-  // }).then(function (youTube) {
-  //   console.log(youTube);
-  // });
+  $.ajax({
+    url: queryURL2,
+    method: "GET"
+  }).then(function (pinterest) {
+    console.log(pinterest);
 
+    var results = [pinterest.data[13], pinterest.data[17], pinterest.data[21]];
+    console.log(results);
+
+    for (var i = 0; i < results.length; i++) {
+      var cardHolder = $("#party-ideas")
+      //create a div with a col class
+      var cardCol = $('<div>');
+      cardCol.addClass("col s4");
+
+      //create the card
+      var card = $('<div>');
+      card.addClass("card blue-grey darken-1");
+
+      //create card content
+      var cardContent = $('<div>');
+      cardContent.addClass('card-content white-text');
+
+      var cardTitle = $('<span>');
+      cardTitle.addClass('card-title');
+      cardTitle.html(results[i].note)
+      cardContent.prepend(cardTitle);
+
+      var partyLink = $('<div>');
+      partyLink.addClass("card-action center-align");
+
+      var a = $("<a>");
+      a.attr("href", results[i].link);
+      a.html("Get Ideas");
+
+      partyLink.append(a);
+      cardContent.append(partyLink);
+      card.append(cardContent);
+      cardCol.append(card);
+      cardHolder.append(cardCol);
+    }
+  });
+
+
+  //firebase
   var config = {
     apiKey: "AIzaSyDXjvCeNcd0deU_LCHEnLq80jQsFavW_ng",
     authDomain: "letstacoboutit01.firebaseapp.com",
@@ -137,7 +176,6 @@ $(document).ready(function () {
     $("#email-input").val('');
     $("#comment-input").val('');
 
-
   });
 
   database.ref().on("child_added", function (childSnapshot) {
@@ -145,8 +183,6 @@ $(document).ready(function () {
     var name = childSnapshot.val().name;
     var email = childSnapshot.val().email;
     var comment = childSnapshot.val().comment;
-
-
 
     var tbody = $('#comment-data')
     var tr = $("<tr>");

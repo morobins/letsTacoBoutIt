@@ -81,13 +81,6 @@ body {
   z-index: 100;
 }
 
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-}
-
 /* @media screen and (max-width:991px) {
   #lab_video_text_wrap {
     height: 300px;

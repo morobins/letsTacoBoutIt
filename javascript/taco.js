@@ -97,12 +97,12 @@ $(document).ready(function () {
   printCards(apiInfo[apiCounter].name, apiInfo[apiCounter].placement);
 
   var config = {
-    apiKey: "AIzaSyDr6KgwjXN8Ly9mC-h6FwQ51rqPEKq5AeI",
-    authDomain: "monique-class-activities.firebaseapp.com",
-    databaseURL: "https://monique-class-activities.firebaseio.com",
-    projectId: "monique-class-activities",
-    storageBucket: "monique-class-activities.appspot.com",
-    messagingSenderId: "325232752750"
+    apiKey: "AIzaSyDXjvCeNcd0deU_LCHEnLq80jQsFavW_ng",
+    authDomain: "letstacoboutit01.firebaseapp.com",
+    databaseURL: "https://letstacoboutit01.firebaseio.com",
+    projectId: "letstacoboutit01",
+    storageBucket: "",
+    messagingSenderId: "458312732124"
   };
   firebase.initializeApp(config);
   
@@ -159,15 +159,13 @@ $(document).ready(function () {
 
   
 
-        var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
+        // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?id=PL-mzrQ96YAORBhi7iNU6Bu_Q5kbchMz0R&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
 
-        var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?id=PL-mzrQ96YAORBhi7iNU6Bu_Q5kbchMz0R&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
-
-        $.ajax({
-          url: queryURL2,
-          method: "GET"
-        }).then(function (youTube) {
-          console.log(youTube);
-        });
+        // $.ajax({
+        //   url: queryURL2,
+        //   method: "GET"
+        // }).then(function (youTube) {
+        //   console.log(youTube);
+        // });
 
       });

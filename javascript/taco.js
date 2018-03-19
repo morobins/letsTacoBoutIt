@@ -9,7 +9,12 @@ $(document).ready(function () {
     autoHeight: false
   });
 
-  var apiInfo = [{
+  var apiInfo = [
+    {
+      name: "guacamole",
+      placement: "#guac-card-holder"
+    },
+    {
       name: "margarita",
       placement: "#margarita-card-holder"
     },
@@ -25,10 +30,6 @@ $(document).ready(function () {
       name: "salsa",
       placement: "#salsa-card-holder"
     },
-    {
-      name: "guacamole",
-      placement: "#guac-card-holder"
-    },
   ];
 
   var apiCounter = 0;
@@ -41,11 +42,11 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-
+        debugger;
       console.log(response);
 
       for (var i = 0; i < response.hits.length; i++) {
-        console.log(response.hits[i])
+        // console.log(response.hits[i])
         var cardHolder = $(destination)
         //create a div with a col class
         var cardCol = $('<div>');
@@ -157,14 +158,6 @@ $(document).ready(function () {
   });
 
   
-  // printCards("margarita", "#margarita-card-holder");
-  // printCards("mexican rice", "#rice-card-holder");
-  // printCards("taco filling", "#filling-card-holder");
-  // printCards("salsa", "#salsa-card-holder");
-
-  // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
-
-        printCards(apiInfo[apiCounter].name, apiInfo[apiCounter].placement);
 
         var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?channelId=UC7bX_RrH3zbdp5V4j5umGgw&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
 

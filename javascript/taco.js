@@ -9,8 +9,7 @@ $(document).ready(function () {
     autoHeight: false
   });
 
-  var apiInfo = [
-    {
+  var apiInfo = [{
       name: "guacamole",
       placement: "#guac-card-holder"
     },
@@ -34,15 +33,14 @@ $(document).ready(function () {
 
   var apiCounter = 0;
 
-
   function printCards(searchTerm, destination) {
     var queryURL = "https://api.edamam.com/search?q=" + searchTerm + "&app_id=37a0ea27&app_key=bc7804ad0a82ffd292c9b2f97619876b&from=0&to=3";
-
+    //edamam API call
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-        debugger;
+      debugger;
       console.log(response);
 
       for (var i = 0; i < response.hits.length; i++) {
@@ -92,9 +90,17 @@ $(document).ready(function () {
     });
   }
 
-
-
   printCards(apiInfo[apiCounter].name, apiInfo[apiCounter].placement);
+
+
+  // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?id=PL-mzrQ96YAORBhi7iNU6Bu_Q5kbchMz0R&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
+
+  // $.ajax({
+  //   url: queryURL2,
+  //   method: "GET"
+  // }).then(function (youTube) {
+  //   console.log(youTube);
+  // });
 
   var config = {
     apiKey: "AIzaSyDXjvCeNcd0deU_LCHEnLq80jQsFavW_ng",
@@ -105,33 +111,33 @@ $(document).ready(function () {
     messagingSenderId: "458312732124"
   };
   firebase.initializeApp(config);
-  
+
   // Create a variable to reference the database.
   var database = firebase.database();
 
   $("#submit-form").on("click", function (event) {
     event.preventDefault();
-  
+
     // Grabbed values from text boxes
     name = $("#name-input").val();
     email = $("#email-input").val();
     comment = $("#comment-input").val();
 
     console.log(name, email, comment);
-  
+
     // Code for handling the push
     database.ref().push({
       name: name,
       email: email,
       comment: comment,
-   dateAdded:firebase.database.ServerValue.TIMESTAMP
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
-  
+
     $("#name-input").val('');
     $("#email-input").val('');
     $("#comment-input").val('');
-   
-  
+
+
   });
 
   database.ref().on("child_added", function (childSnapshot) {
@@ -139,33 +145,23 @@ $(document).ready(function () {
     var name = childSnapshot.val().name;
     var email = childSnapshot.val().email;
     var comment = childSnapshot.val().comment;
-    
-  
-  
+
+
+
     var tbody = $('#comment-data')
     var tr = $("<tr>");
     var tdName = $("<td>").text(name);
     var tdEmail = $("<td>").text(email);
     var tdComment = $("<td>").text(comment);
-  
+
     tr.append(tdName, tdEmail, tdComment);
-  
+
     tbody.append(tr);
-  
+
     // Handle the errors
   }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
 
-  
 
-        // var queryURL2 = "https://www.googleapis.com/youtube/v3/playlists?id=PL-mzrQ96YAORBhi7iNU6Bu_Q5kbchMz0R&key=AIzaSyD5gZvasVNbDmW7Pv1IP6_Q_rPPCvEDriI&part=snippet,contentDetails";
-
-        // $.ajax({
-        //   url: queryURL2,
-        //   method: "GET"
-        // }).then(function (youTube) {
-        //   console.log(youTube);
-        // });
-
-      });
+});

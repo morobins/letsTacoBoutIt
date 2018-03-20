@@ -12,6 +12,12 @@ body {
   padding: 0;
 }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+
+  margin: 0px;
+  text-transform: capitalize;
+ }
+
 
 .fullscreen {
   padding: 0;

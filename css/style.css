@@ -28,6 +28,11 @@ body {
   color: white;
 }
 
+.input-field .prefix.active{
+
+  color:white;
+}
+
 #card-holder {
   z-index: 99;
 }
@@ -64,6 +69,38 @@ body {
 
 #card-holder {
   z-index: 100;
+}
+
+#lab_video_text_overlay_text{
+
+  position: absolute;
+  color: #ffffff;
+ 
+  top: 5%;
+  
+  margin-left: 20px;
+
+  z-index: 99;
+
+}
+
+h5{
+
+  margin-left:25px;
+}
+
+
+#onetext{
+
+  margin:0px;
+}
+
+.one{
+
+  
+  text-align: left;
+  font-family: 'Vast Shadow', cursive;
+  font-size: 100px;
 }
 
 /* .swiper-container {

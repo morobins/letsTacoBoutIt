@@ -17,6 +17,10 @@ body {
   margin: 0;
 }
 
+.input-field label {
+  color: white;
+}
+
 #card-holder {
   z-index: 99;
 }
@@ -46,7 +50,7 @@ body {
   background-color: #669900;
   top: 5%;
   text-align: center;
-  margin-left: 100px;
+  margin-left: 70px;
   opacity: 0.9;
   z-index: 99;
 }

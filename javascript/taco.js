@@ -40,7 +40,6 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      debugger;
       console.log(response);
 
       for (var i = 0; i < response.hits.length; i++) {
@@ -94,7 +93,8 @@ $(document).ready(function () {
 
 
   //Pinterest API call
-  var queryURL2 = "https://api.pinterest.com/v1/boards/eventprep/fiesta-themed-event/pins/?access_token=AVLO9DT26n5QIo51b82JWrmEjD1UFR1gVsDvElxEyV7qa4AvwAAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cboard%2Cimage";
+  var queryURL2 = "https://api.pinterest.com/v1/boards/eventprep/fiesta-themed-event/pins/?access_token=AVLO9DT26n5QIo51b82JWrmEjD1UFR1gVsDvElxEyV7qa4AvwAAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cboard%2Cimage&limit=3";
+
 
   $.ajax({
     url: queryURL2,
@@ -102,8 +102,7 @@ $(document).ready(function () {
   }).then(function (pinterest) {
     console.log(pinterest);
 
-    var results = [pinterest.data[13], pinterest.data[17], pinterest.data[21]];
-    console.log(results);
+    var results = pinterest.data;
 
     for (var i = 0; i < results.length; i++) {
       var cardHolder = $("#party-ideas")

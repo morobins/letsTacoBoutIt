@@ -12,13 +12,53 @@ body {
   padding: 0;
 }
 
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
 
-  margin: 0px;
-  text-transform: capitalize;
+.fullscreen {
+  padding: 0;
+  margin: 0;
 }
 
+.input-field label {
+  color: white;
+}
 
+#card-holder {
+  z-index: 99;
+}
+
+#lab_video_text_overlay h2 {
+  font-size: 4em;
+}
+
+#lab_video_text_overlay {
+  position: absolute;
+  color: white;
+  width: 100%;
+  top: 25%;
+  z-index: 99;
+}
+
+#lab_video_text_overlay .container {
+  text-align: center;
+  margin: 0px auto;
+  background-color: #669900;
+  opacity: 0.9;
+}
+
+#lab_video_text_overlay_form {
+  position: absolute;
+  color: white;
+  background-color: #669900;
+  top: 5%;
+  text-align: center;
+  margin-left: 70px;
+  opacity: 0.9;
+  z-index: 99;
+}
+
+#card-holder {
+  z-index: 100;
+}
 
 /* .swiper-container {
   width: 100%;
@@ -26,15 +66,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 } */
-
-.fullscreen {
-  padding: 0;
-  margin: 0;
-}
-
-#card-holder {
-  z-index: 99;
-}
 
 /* .swiper-slide {
   text-align: center;
@@ -56,10 +87,6 @@ body {
 
 /* Text Overlay */
 
-#lab_video_text_overlay h2 {
-  font-size: 4em;
-}
-
 /* #lab_video_text_overlay .btn {
   border-radius: 0;
   text-transform: uppercase;
@@ -69,25 +96,6 @@ body {
 #lab_video_text_overlay .btn-warning {
   background-color: #F5D328;
 } */
-
-#lab_video_text_overlay {
-  position: absolute;
-  color: white;
-  width: 100%;
-  top: 25%;
-  z-index: 99;
-}
-
-#lab_video_text_overlay .container {
-  text-align: center;
-  margin: 0px auto;
-  background-color: #669900;
-  opacity: 0.9;
-}
-
-#card-holder {
-  z-index: 100;
-}
 
 /* @media screen and (max-width:991px) {
   #lab_video_text_wrap {

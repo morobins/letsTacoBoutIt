@@ -18,6 +18,18 @@ body {
   text-transform: capitalize;
  }
 
+ .input-field .prefix.active {
+  color: lightgray;
+}
+
+textarea.label {
+  color: lightgray;
+}
+
+
+/* textarea.materialize-textarea:focus:not([readonly])+label{
+  color: lightgray;
+} */
 
 .fullscreen {
   padding: 0;

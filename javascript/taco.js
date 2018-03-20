@@ -145,58 +145,40 @@ $(document).ready(function () {
     authDomain: "letstacoboutit01.firebaseapp.com",
     databaseURL: "https://letstacoboutit01.firebaseio.com",
     projectId: "letstacoboutit01",
-    storageBucket: "",
+    storageBucket: "letstacoboutit01.appspot.com",
     messagingSenderId: "458312732124"
   };
+
   firebase.initializeApp(config);
 
-  // Create a variable to reference the database.
+  // Create a variable to reference the database
   var database = firebase.database();
 
-  $("#submit-form").on("click", function (event) {
-    event.preventDefault();
+  var name = "";
+  var email = "";
+  var comment = "";
 
+  $("#submit-form").on("click", function () {
+    event.preventDefault();
     // Grabbed values from text boxes
-    name = $("#name-input").val();
-    email = $("#email-input").val();
-    comment = $("#comment-input").val();
+    name = $("#name-input").find("input").val().trim();
+    email = $("#email-input").find("input").val().trim();
+    comment = $("#comment-input").find("textarea").val().trim();
 
     console.log(name, email, comment);
 
-    // Code for handling the push
-    database.ref().push({
+    // Change what is saved in firebase
+    database.ref().set({
       name: name,
       email: email,
-      comment: comment,
-      dateAdded: firebase.database.ServerValue.TIMESTAMP
+      comment: comment
+  
     });
 
-    $("#name-input").val('');
-    $("#email-input").val('');
-    $("#comment-input").val('');
-
+    name = $("#name-input").find("input").val("");
+    email = $("#email-input").find("input").val("");
+    comment = $("#comment-input").find("textarea").val("");
   });
 
-  database.ref().on("child_added", function (childSnapshot) {
-
-    var name = childSnapshot.val().name;
-    var email = childSnapshot.val().email;
-    var comment = childSnapshot.val().comment;
-
-    var tbody = $('#comment-data')
-    var tr = $("<tr>");
-    var tdName = $("<td>").text(name);
-    var tdEmail = $("<td>").text(email);
-    var tdComment = $("<td>").text(comment);
-
-    tr.append(tdName, tdEmail, tdComment);
-
-    tbody.append(tr);
-
-    // Handle the errors
-  }, function (errorObject) {
-    console.log("Errors handled: " + errorObject.code);
-  });
-
-
+ 
 });

@@ -16,9 +16,6 @@
 
 <body>
 
-  <!-- <section id="lab_video_slider"> -->
-  <!-- <div class="container-fluid fullscreen">
-      <div class="row fullscreen"> -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div id="slide_one" class="swiper-slide">
@@ -27,10 +24,7 @@
             <h2>Let's Taco 'Bout It</h2>
           </div>
         </div>
-        <!-- VIDEO -->
-        <!-- <video autoplay muted loop id="myVideo">
-                <source src="./images/taco2.mp4" type="video/mp4">
-              </video> -->
+    
         <video class="slider-video" width="100%" preload="auto" loop="" autoplay="" style="visibility: visible; width: 100%;" src="./images/taco4.mp4"
           type="video/mp4">
         </video>
@@ -110,61 +104,25 @@
             <div class="row">
               <form class="col s12">
                 <div class="row">
-                  <div class="input-field col s6">
+                  <div class="input-field col s6" id="name-input">
                     <i class="material-icons prefix">account_circle</i>
                     <input id="icon_prefix name-input" type="text" class="validate">
                     <label for="icon_prefix">Name</label>
                   </div>
-                  <div class="input-field col s6">
+                  <div class="input-field col s6" id="email-input">
                     <i class="material-icons prefix">email</i>
-                    <input id="icon_telephone email-input" type="tel" class="validate">
+                    <input id="icon_telephone" type="email" class="validate">
                     <label for="icon_telephone">E-mail</label>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="input-field col s12">
+                  <div class="input-field col s12" id="comment-input">
                     <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2 comment-input" class="materialize-textarea"></textarea>
+                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
                     <label for="icon_prefix2">Let us know how your recipe came out!</label>
-              </div>
-
-              <video class="slider-video" width="100%" preload="auto" loop="" autoplay="" style="visibility: visible; width: 100%;" poster="./images/avocado.jpg">
-              </video>
-
-            </div>
-
-            <div id="slide_seven" class="swiper-slide">
-              <div id="lab_video_text_overlay">
-                <div class="container">
-                  <h3>How did it go?</h3>
-                  <div class="row">
-                    <form class="col s12">
-                      <div class="row">
-                        <div class="input-field col s6" id="name-input">
-                          <i class="material-icons prefix">account_circle</i>
-                          <input id="icon_prefix name-input" type="text" class="validate">
-                          <label for="icon_prefix">Name</label>
-                        </div>
-                        <div class="input-field col s6" id="email-input">
-                          <i class="material-icons prefix">email</i>
-                          <input id="icon_telephone" type="email" class="validate">
-                          <label for="icon_telephone">E-mail</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12" id="comment-input">
-                          <i class="material-icons prefix">mode_edit</i>
-                          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                          <label for="icon_prefix2">Let us know how your recipe came out!</label>
-                        </div>
-                      </div>
-                      <button class="btn waves-effect waves-light" id="submit-form" type="submit" >Submit
-                        <i class="material-icons right">send</i>
-                      </button>
-                    </form>
                   </div>
                 </div>
-                <button class="btn waves-effect waves-light" id="#submit-form" type="submit">Submit
+                <button class="btn waves-effect waves-light" id="submit-form" type="submit">Submit
                   <i class="material-icons right">send</i>
                 </button>
               </form>
@@ -191,13 +149,7 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-  <!-- </div> -->
-  <!-- end .row -->
-  <!-- </div> -->
-  <!-- end .container -->
-  <!-- </div>  -->
-  <!-- end #section -->
-  <!-- </section> -->
+
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

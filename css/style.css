@@ -7,7 +7,7 @@ body {
   /* background: #eee; */
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
-  color: #000;
+  color: rgb(255, 255, 255);
   margin: 0;
   padding: 0;
 }
@@ -36,9 +36,7 @@ textarea.label {
   margin: 0;
 }
 
-.input-field label {
-  color: white;
-}
+
 
 .input-field .prefix.active{
 
@@ -115,57 +113,55 @@ h5{
   font-size: 100px;
 }
 
-/* .swiper-container {
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-} */
 
-/* .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-} */
 
-/* Text Overlay */
-
-/* #lab_video_text_overlay .btn {
-  border-radius: 0;
-  text-transform: uppercase;
-  font-weight: 200;
+ /* label color */
+ .input-field label {
+  color: rgb(255, 255, 255);
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: rgb(255, 255, 255)00;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 1px 0 0 rgb(255, 255, 255)0;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 1px 0 0 rgb(255, 255, 255);
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 1px 0 0 rgb(255, 255, 255);
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: rgb(255, 255, 255);
 }
 
-#lab_video_text_overlay .btn-warning {
-  background-color: #F5D328;
-} */
 
-/* @media screen and (max-width:991px) {
-  #lab_video_text_wrap {
-    height: 300px;
-  }
-} */
+input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
 
-/* @media screen and (max-width:650px) {
-  #lab_video_text_wrap {
-    height: 250px;
-  }
-  #lab_video_text_overlay h2 {
-    font-size: 2em;
-  }
-  #lab_video_text_overlay p {
-    font-size: .9em;
-  }
-} */
+color:white;
+
+}
+
+input:not([type]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+
+  border-bottom:1px solid gray;
+  box-shadow: 0 1px 0 0 gray;
+}
+
+.btn, .btn-large{
+
+  background-color: goldenrod;
+}
+
+.btn:hover, .btn-large:hover {
+  background-color: #ffffff;
+
+}

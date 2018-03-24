@@ -4,7 +4,6 @@ body {
 }
 
 body {
-  /* background: #eee; */
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: rgb(255, 255, 255);
@@ -12,13 +11,12 @@ body {
   padding: 0;
 }
 
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
-
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   margin: 0px;
   text-transform: capitalize;
- }
+}
 
- .input-field .prefix.active {
+.input-field .prefix.active {
   color: lightgray;
 }
 
@@ -26,21 +24,13 @@ textarea.label {
   color: lightgray;
 }
 
-
-/* textarea.materialize-textarea:focus:not([readonly])+label{
-  color: lightgray;
-} */
-
 .fullscreen {
   padding: 0;
   margin: 0;
 }
 
-
-
-.input-field .prefix.active{
-
-  color:white;
+.input-field .prefix.active {
+  color: white;
 }
 
 #card-holder {
@@ -81,87 +71,121 @@ textarea.label {
   z-index: 100;
 }
 
-#lab_video_text_overlay_text{
-
+#lab_video_text_overlay_text {
   position: absolute;
   color: #ffffff;
- 
   top: 5%;
-  
   margin-left: 20px;
-
   z-index: 99;
-
 }
 
-h5{
-
-  margin-left:25px;
+h5 {
+  margin-left: 25px;
 }
 
-
-#onetext{
-
-  margin:0px;
+#onetext {
+  margin: 0px;
 }
 
-.one{
-
-  
+.one {
   text-align: left;
   font-family: 'Vast Shadow', cursive;
   font-size: 100px;
 }
 
+.row-form {
+  margin-bottom: 0px;
+}
 
+/* label color */
 
- /* label color */
- .input-field label {
+.input-field label {
   color: rgb(255, 255, 255);
 }
+
 /* label focus color */
-.input-field input[type=text]:focus + label {
+
+.input-field input[type=text]:focus+label {
   color: rgb(255, 255, 255)00;
 }
+
 /* label underline focus color */
+
 .input-field input[type=text]:focus {
   border-bottom: 1px solid rgb(255, 255, 255);
   box-shadow: 0 1px 0 0 rgb(255, 255, 255)0;
 }
+
 /* valid color */
+
 .input-field input[type=text].valid {
   border-bottom: 1px solid rgb(255, 255, 255);
   box-shadow: 0 1px 0 0 rgb(255, 255, 255);
 }
+
 /* invalid color */
+
 .input-field input[type=text].invalid {
   border-bottom: 1px solid rgb(255, 255, 255);
   box-shadow: 0 1px 0 0 rgb(255, 255, 255);
 }
+
 /* icon prefix focus color */
+
 .input-field .prefix.active {
   color: rgb(255, 255, 255);
 }
 
-
-input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
-
-color:white;
-
+input:not([type]):focus:not([readonly])+label,
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=password]:not(.browser-default):focus:not([readonly])+label,
+input[type=email]:not(.browser-default):focus:not([readonly])+label,
+input[type=url]:not(.browser-default):focus:not([readonly])+label,
+input[type=time]:not(.browser-default):focus:not([readonly])+label,
+input[type=date]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,
+input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+input[type=number]:not(.browser-default):focus:not([readonly])+label,
+input[type=search]:not(.browser-default):focus:not([readonly])+label,
+textarea.materialize-textarea:focus:not([readonly])+label {
+  color: white;
 }
 
-input:not([type]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-
-  border-bottom:1px solid gray;
+input:not([type]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid gray;
   box-shadow: 0 1px 0 0 gray;
 }
 
-.btn, .btn-large{
-
+.btn,
+.btn-large {
   background-color: goldenrod;
 }
 
-.btn:hover, .btn-large:hover {
+.btn:hover,
+.btn-large:hover {
   background-color: #ffffff;
+}
 
+.btn:focus {
+  background-color: white;
+  outline-color: white;
+}
+
+input[type=email].valid:not(.browser-default),
+.input-field input[type=text].valid {
+  border-bottom: 1px solid gray;
+  box-shadow: 0 1px 0 0 gray;
 }

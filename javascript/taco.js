@@ -122,6 +122,7 @@ $(document).ready(function () {
       var cardTitle = $('<span>');
       cardTitle.addClass('card-title');
       cardTitle.html(results[i].note)
+      cardTitle.attr("style", "font-size: 16px");
       cardContent.prepend(cardTitle);
 
       var partyLink = $('<div>');
@@ -169,18 +170,35 @@ $(document).ready(function () {
 
     console.log(name, email, comment);
 
-    // Change what is saved in firebase
-    database.ref().set({
-      name: name,
-      email: email,
-      comment: comment
-  
-    });
+    //Change what is saved in firebase
+    if (name === '' || email === '' || comment === '') {
+      var verify = $(".verify");
+      verify.addClass("alert alert-secondary");
+      verify.attr("role", "alert");
+      verify.attr("style", "color: red");
+      verify.html("Missing information");
+    } else {
+      database.ref().set({
+        name: name,
+        email: email,
+        comment: comment
 
-    name = $("#name-input").find("input").val("");
-    email = $("#email-input").find("input").val("");
-    comment = $("#comment-input").find("textarea").val("");
+      });
+
+      var verify = $(".verify");
+      verify.addClass("alert alert-secondary");
+      verify.attr("role", "alert");
+      verify.attr("style", "color: white");
+      verify.html("Thank you for your feedback!");
+
+      name = $("#name-input").find("input").val("");
+      email = $("#email-input").find("input").val("");
+      comment = $("#comment-input").find("textarea").val("");
+    }
+
+
   });
 
- 
+
+
 });

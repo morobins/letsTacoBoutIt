@@ -72,6 +72,7 @@ $(document).ready(function () {
 
         var a = $("<a>");
         a.attr("href", response.hits[i].recipe.shareAs);
+        a.attr("target", "_blank");
         a.html("Get Recipe");
 
         recipeLink.append(a);
@@ -128,6 +129,7 @@ $(document).ready(function () {
 
       var a = $("<a>");
       a.attr("href", results[i].link);
+      a.attr("target", "_blank");
       a.html("Get Ideas");
 
       partyLink.append(a);
